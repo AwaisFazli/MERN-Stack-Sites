@@ -1,0 +1,6 @@
+Day1 Learned:
+Global Variables
+Modules
+Import/Exports 
+Mind Grenades
+Os Module
