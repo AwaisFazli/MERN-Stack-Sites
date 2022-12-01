@@ -1,21 +1,13 @@
 const express = require("express");
-
 const app = express();
+const logger = require("./middlewares/logger");
 
 // Middleware act as the middle man between the Request and Response you get the Request
 // you apply some funcationalities on it and then send the response accordingly
+app.use(logger);
 
-const logger = (req, res, next) => {
-  const url = req.url;
-  const method = req.method;
-  const date = new Date().getFullYear();
-  console.log(url, method, date);
-  //   res.send() => this would send its own data as an response an would overwrite the app.get response
-  //   next() => is used to transfer the flow to any other middle ware or back to app.get
-  //   If you dont do any of the above mentioned actions the Page will keep on loading
-};
-
-app.get("/", logger, (req, res) => {
+// app.get("/",logger, (req, res) => {
+app.get("/", (req, res) => {
   res.send("<h1>HomePage</h1>");
 });
 
