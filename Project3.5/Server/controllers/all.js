@@ -8,4 +8,8 @@ const signup = async (req, res) => {
   }
 };
 
-module.exports = { signup };
+const homepage = async (req, res) => {
+  res.status(200).send("Server Is Running");
+};
+
+module.exports = { signup, homepage };
