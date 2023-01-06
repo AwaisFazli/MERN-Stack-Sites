@@ -1,10 +1,22 @@
 import React from "react";
+import axios from "axios";
 
 const Signup = () => {
+  const submitHandler = (event) => {
+    event.preventDefault();
+
+    const username = event.target.username.value;
+    const password = event.target.password.value;
+
+    axios.post("http://localhost:5000/api/signup", { username, password });
+
+    console.log(username, password);
+  };
+
   return (
     <div>
       <div className="w-1/3">
-        <form action="/api/signup" method="POST">
+        <form onSubmit={submitHandler}>
           <div>
             <label htmlFor="username">Username</label>
             <input
