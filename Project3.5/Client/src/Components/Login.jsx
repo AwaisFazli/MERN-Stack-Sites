@@ -8,7 +8,7 @@ const Login = () => {
     const username = event.target.username.value;
     const password = event.target.password.value;
 
-    axios.get("http://localhost:5000/api/login", { username, password });
+    axios.post("http://localhost:5000/api/login", { username, password });
 
     console.log(username, password);
   };
