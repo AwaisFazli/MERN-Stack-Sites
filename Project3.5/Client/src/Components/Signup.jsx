@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 
 const Signup = () => {
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
 
     const username = event.target.username.value;
