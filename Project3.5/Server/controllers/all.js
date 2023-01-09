@@ -11,7 +11,17 @@ const signup = async (req, res) => {
 };
 
 const login = async (req, res) => {
-  console.log(req.body);
+  const user = await UserSchema.findOne({ username: req.body.username });
+  if (user) {
+    console.log("User Exists");
+    if (req.body.password == user.password) {
+      console.log("Acess Granted");
+    } else {
+      console.log("Invalid Email or Password");
+    }
+  } else {
+    console.log("Email Does not Exists");
+  }
   res.status(200).send("Server Working");
 };
 
