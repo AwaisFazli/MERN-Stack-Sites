@@ -2,13 +2,13 @@ import React from "react";
 import axios from "axios";
 
 const Login = () => {
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
 
     const username = event.target.username.value;
     const password = event.target.password.value;
 
-    axios.get("http://localhost:5000/api/login", { username, password });
+    axios.post("http://localhost:5000/api/login", { username, password });
 
     console.log(username, password);
   };
