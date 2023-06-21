@@ -19,6 +19,9 @@ app.use(express.json());
 // extra packages
 
 // routes
+app.get("/", (req, res) => {
+  res.send("Welcome Home")
+})
 app.use("/api/v1/auth", authRouter);
 app.use("/api/v1/jobs", jobsRouter);
 
